@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "学习通 · 本地学习助手",
+  "version": "0.1.1",
+  "description": "正常视频播放辅助、本地进度记录、题目整理。提交由本人操作。",
+  "minimum_chrome_version": "120",
+  "permissions": ["storage", "alarms", "activeTab"],
+  "host_permissions": ["http://127.0.0.1:18765/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_popup": "popup.html", "default_title": "学习助手" },
+  "content_scripts": [{
+    "matches": ["https://*.chaoxing.com/*", "http://*.chaoxing.com/*", "https://*.xuexitong.com/*", "http://*.xuexitong.com/*", "http://127.0.0.1:18765/demo*"],
+    "js": ["adapter.js", "content.js"],
+    "run_at": "document_idle", "all_frames": true, "match_about_blank": true
+  }],
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'self'" }
+}

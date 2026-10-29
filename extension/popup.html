@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>学习助手</title><link rel="stylesheet" href="popup.css"></head>
+<body><header><span class="logo">习</span><div><h1>学习助手</h1><small>当前标签页 · 本地记录</small></div></header>
+<p id="status" role="status">读取中…</p>
+<div class="actions"><button id="start">开始 / 处理后继续</button><button id="pause" class="secondary">暂停</button></div>
+<label class="check"><input type="checkbox" id="autoNext">视频自然结束后切换下一节</label>
+<p class="hint">遇题目或验证会暂停。离开课程标签页会暂停视频；返回后请自行播放。</p>
+<details><summary>连接本地看板</summary><label>配对码<input id="token" type="password" autocomplete="off" placeholder="从看板复制 64 位配对码"></label><button id="pair" class="secondary">连接并保存</button><p id="sync" class="hint"></p></details>
+<details><summary>页面适配（可选）</summary><p class="hint">只在默认识别失败时填写 CSS 选择器，保存后刷新课程页。</p><label>课程名称<input id="courseSelector" placeholder="例如 .courseName"></label><label>章节名称<input id="sectionSelector" placeholder="例如 .chapter-title"></label><label>下一节按钮<input id="nextSelector" placeholder="例如 a#nextChapter"></label></details>
+<button id="save" class="secondary wide">保存设置</button><a href="http://127.0.0.1:18765/" target="_blank" rel="noreferrer">打开课程看板 ↗</a>
+<p id="message" role="alert"></p><script src="popup.js"></script></body></html>
